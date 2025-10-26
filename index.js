@@ -1,4 +1,4 @@
-let API = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=";
+import { API_URL } from "./env.js";
 
 let qrText = document.getElementById("qrText");
 let imgBox = document.getElementById("imgBox");
@@ -8,7 +8,7 @@ let genBtn = document.getElementById("genBtn");
 async function generateQR(inputText) {
     let textLength = inputText.length;
     if (textLength > 0) {
-        qrImage.src = `${API}${encodeURIComponent(inputText)}`; 
+        qrImage.src = `${API_URL}${encodeURIComponent(inputText)}`; 
         imgBox.classList.add("show-img");
     } else {
         qrText.classList.add("error");
